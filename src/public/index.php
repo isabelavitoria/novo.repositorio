@@ -14,10 +14,20 @@
     <h1>Hello, world!</h1>
 <?php
 
-echo 'OI';
+include('vendor/autoload.php');
+
+$client = new \GuzzleHttp\Client();
+
+$faker = Faker\Factory::create('pt_BR');
+$nome = $faker->name();
+
+echo $nome;
+
+
 
 ?>
-
+<img src="https://robohash.org/<?php echo $nome; ?>.png?set=set4" class="col-lg-4" alt="">
+docker
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
